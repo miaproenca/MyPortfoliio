@@ -1,0 +1,298 @@
+/* ==========================================================
+   Página About me — usa as variáveis e componentes do styles.css
+   ========================================================== */
+
+:root {
+  --yellow: #f6c445;
+  --navy: #1a2f8f;
+  /* asterisco usado como marcador da timeline (vira máscara, então segue a cor de fundo) */
+  --asterisk: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M12 2.5v19M3.8 7.2l16.4 9.6M3.8 16.8l16.4-9.6' stroke='black' stroke-width='3.6' stroke-linecap='round' fill='none'/%3E%3C/svg%3E");
+  --star: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+}
+
+.about { display: flex; flex-direction: column; gap: var(--section-gap); }
+
+.about__intro .btn { margin-top: var(--space-3); }
+
+.about__grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.25fr);
+  gap: var(--space-6);
+  align-items: start;
+}
+
+.about__grid--even { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+
+.block__title {
+  margin: 0 0 var(--space-3);
+  font-size: var(--fs-h2);
+  font-weight: 600;
+  color: var(--blue);
+}
+
+/* ---------- Timeline ---------- */
+
+.timeline {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.timeline__item {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-half);
+  padding-left: var(--space-4);
+  font-size: var(--fs-body);
+  line-height: var(--lh-body);
+}
+
+/* marcador: asterisco azul */
+.timeline__star {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 24px;
+  height: 24px;
+  background: var(--blue);
+  -webkit-mask: var(--asterisk) center / contain no-repeat;
+  mask: var(--asterisk) center / contain no-repeat;
+}
+
+.timeline__date { font-size: var(--fs-sm); font-weight: 600; color: var(--red); }
+.timeline__role { font-family: var(--font); font-size: var(--fs-h3); line-height: 1.3; font-weight: 600; color: var(--blue); }
+.timeline__place { color: var(--text); }
+
+/* tags rosa (ex.: User Research, SwiftUI) */
+.tags {
+  list-style: none;
+  margin: var(--space-1) 0 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-1);
+}
+
+.tags li {
+  padding: var(--space-half) var(--space-1-5);
+  font-size: var(--fs-xs);
+  font-weight: 600;
+  color: var(--red);
+  background: var(--red-soft);
+  border-radius: 999px;
+}
+
+/* ---------- Licenças e certificados, agrupados por área ---------- */
+
+.cert-groups {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--space-3);
+}
+
+.cert-group {
+  padding: var(--space-4);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-md);
+}
+
+.cert-group__title {
+  margin: 0 0 var(--space-2);
+  font-size: var(--fs-h3);
+  font-weight: 600;
+  color: var(--blue);
+}
+
+.certs {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.cert { display: flex; flex-direction: column; gap: var(--space-half); }
+
+.cert__name { font-size: 1rem; font-weight: 500; line-height: 1.4; color: var(--text); }
+
+.cert__meta { font-size: var(--fs-sm); color: var(--ink-soft); }
+
+/* ---------- Stickers (skills técnicas) ---------- */
+
+.frame {
+  position: relative;
+  padding: var(--space-6) var(--space-4);
+  border: 2px dashed var(--pink-border);
+  border-radius: 6px;
+}
+
+.frame__handle {
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  background: var(--red);
+}
+.frame__handle--tl { top: -8px; left: -8px; }
+.frame__handle--tr { top: -8px; right: -8px; background: var(--yellow); }
+.frame__handle--bl { bottom: -8px; left: -8px; background: var(--blue); }
+.frame__handle--br { bottom: -8px; right: -8px; background: var(--navy); }
+
+.stickers {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--space-3) var(--space-2);
+}
+
+.sticker {
+  --c: var(--red);
+  --ring: var(--red-soft);
+  padding: var(--space-2) var(--space-3);
+  font-size: 1rem;
+  font-weight: 800;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--c);
+  background: #fff;
+  border: 3px solid var(--c);
+  border-radius: 14px;
+  box-shadow: 0 0 0 6px var(--ring);
+  transform: rotate(var(--r, 0deg));
+  transition: transform 0.25s cubic-bezier(.3, 1.6, .5, 1);
+  cursor: default;
+}
+
+.sticker:hover { transform: rotate(0deg) scale(1.08); }
+
+.sticker--pill  { border-radius: 999px; }
+.sticker--blob  { border-radius: 58% 42% 52% 48% / 55% 48% 52% 45%; padding-inline: var(--space-4); }
+
+.sticker--blue   { --c: var(--blue);   --ring: #d7e1fa; }
+.sticker--pink   { --c: var(--pink-text); --ring: #fdeef1; }
+.sticker--yellow { --c: #8a6500;       --ring: #fcefc2; border-color: var(--yellow); }
+
+.sticker--solid { background: var(--c); color: #fff; }
+
+/* faíscas decorativas */
+.spark {
+  position: absolute;
+  background: var(--pink-border);
+  clip-path: var(--star);
+  pointer-events: none;
+}
+.spark--a { width: 44px; height: 44px; top: -22px; right: 18%; }
+.spark--b { width: 30px; height: 30px; bottom: -14px; left: 22%; background: var(--yellow); }
+
+/* ---------- Software (ícones alinhados) ---------- */
+
+.logos {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(4, 64px);
+  gap: var(--space-3);
+}
+
+.logos img { display: block; width: 64px; height: 64px; object-fit: contain; }
+
+/* ---------- Personal skills ---------- */
+
+.pills {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-1);
+}
+
+.pills li {
+  padding: var(--space-1) var(--space-2);
+  font-size: var(--fs-sm);
+  font-weight: 500;
+  color: var(--text);
+  background: var(--surface);
+  border-radius: 999px;
+}
+
+/* ---------- CTA "Let's work together" ---------- */
+
+.cta {
+  position: relative;
+  display: grid;
+  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+  align-items: center;
+  gap: var(--space-4);
+  padding: var(--space-6) var(--space-6) var(--space-9);
+  background: var(--red-soft);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+}
+
+/* borda "nuvem" na base */
+.cta::after {
+  content: "";
+  position: absolute;
+  left: 0; right: 0; bottom: -1px;
+  height: 24px;
+  background: radial-gradient(circle at 50% 100%, #fff 0 21px, transparent 22px) 0 0 / 46px 24px repeat-x;
+}
+
+.cta__art {
+  min-height: 220px;
+  display: grid;
+  place-items: center;
+  border: 2px dashed var(--pink-border);
+  border-radius: var(--radius-md);
+  color: var(--pink-text);
+  font-weight: 600;
+}
+.cta__art img { width: 100%; height: auto; }
+
+/* sem ilustração, o espaço some e o texto ocupa a largura toda */
+.cta__art:not(:has(img)) { display: none; }
+.cta:not(:has(img)) { grid-template-columns: 1fr; }
+
+.cta__content { display: flex; flex-direction: column; align-items: flex-start; gap: var(--space-3); }
+
+.cta__title {
+  margin: 0;
+  font-size: clamp(2.25rem, 4.5vw, 3.75rem);
+  font-weight: 700;
+  line-height: 1.05;
+  color: var(--blue);
+}
+.cta__title span { color: var(--red); }
+
+/* ---------- Movimento reduzido ---------- */
+
+@media (prefers-reduced-motion: reduce) {
+  .sticker, .app { transition: none; }
+  .sticker:hover, .app:hover { transform: rotate(var(--r, 0deg)); }
+}
+
+/* ---------- Responsivo ---------- */
+
+@media (max-width: 1000px) {
+  .about__grid,
+  .about__grid--even { grid-template-columns: 1fr; gap: var(--space-6); }
+  .cert-groups { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 800px) {
+  .cta { grid-template-columns: 1fr; padding: var(--space-4) var(--space-3) var(--space-8); }
+  .cta__art { min-height: 160px; }
+  .frame { padding: var(--space-4) var(--space-2); }
+  .cert-group { padding: var(--space-3); }
+  .logos { grid-template-columns: repeat(4, 56px); gap: var(--space-2); }
+  .logos img { width: 56px; height: 56px; }
+}

@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Mirela Proença — UI/UX Designer</title>
+  <meta name="description" content="Portfólio de Mirela Proença, UI/UX Designer." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,200..800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+  <!-- about.css traz componentes compartilhados (stickers etc.) que a home também usa -->
+  <link rel="stylesheet" href="about.css" />
+  <link rel="stylesheet" href="home.css" />
+</head>
+<body>
+  <div class="layout">
+
+    <!-- ========== SIDEBAR ========== -->
+    <aside class="sidebar">
+      <a href="index.html" class="profile">
+        <img class="profile__photo" src="assets/mirela.jpg" alt="Foto de Mirela Proença" />
+        <div class="profile__info">
+          <strong class="profile__name">Mirela Proença</strong>
+          <span class="profile__role">Product designer</span>
+        </div>
+      </a>
+
+      <nav class="nav" aria-label="Navegação principal">
+        <a href="index.html" class="nav__item nav__item--active" aria-current="page">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 11.5 12 4l9 7.5"/><path d="M5.5 10v10h13V10"/><path d="M10 20v-6h4v6"/></svg>
+          <span>Home</span>
+        </a>
+        <a href="about.html" class="nav__item">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="3.6"/><path d="M4.5 20c.8-4 3.7-6 7.5-6s6.7 2 7.5 6"/></svg>
+          <span>Resume</span>
+        </a>
+        <a href="projects.html" class="nav__item">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 7.5V19h18V8.5H11L9 6H3z"/><path d="M3 10.5h18"/></svg>
+          <span>Projects</span>
+        </a>
+        <a href="contact.html" class="nav__item">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="1.5"/><path d="m3 6 9 7 9-7"/></svg>
+          <span>Contact</span>
+        </a>
+      </nav>
+    </aside>
+
+    <!-- ========== CONTEÚDO ========== -->
+    <main class="main">
+
+      <!-- Hero -->
+      <section class="hero">
+        <h1 class="hero__title">Hey, I'm Mirela</h1>
+
+        <!-- O cargo alterna sozinho; edite a lista em data-roles (separe com |) -->
+        <h2 class="hero__subtitle" aria-label="UI/UX Designer, Product Designer, Mom to two schnauzers and a turtle">
+          <span class="hero__role" data-roles="UI/UX Designer|Product Designer|Mom to two schnauzers and a turtle" aria-hidden="true">UI/UX Designer</span>
+        </h2>
+
+        <!-- EDITE: conte sua história com suas palavras -->
+        <p class="hero__text">
+          I'm a UI/UX and Product Designer interested in how things work, how people use them and how to make them better.
+Currently studying Design at PUCPR and learning to bring my ideas to life through iOS development at Apple Developer Academy.
+        </p>
+
+        <div class="hero__actions">
+          <a href="projects.html" class="btn btn--primary">
+            See my work
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 18 18 6"/><path d="M8 6h10v10"/></svg>
+          </a>
+          <a href="about.html" class="btn btn--outline">
+            My resume
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 18 18 6"/><path d="M8 6h10v10"/></svg>
+          </a>
+        </div>
+      </section>
+
+      <!-- Selected work -->
+      <section class="works" aria-labelledby="works-title">
+        <h2 id="works-title" class="works__title">Selected work</h2>
+
+        <div class="works__grid">
+
+          <a href="cleck.html" class="card">
+            <div class="card__image">
+              <img src="assets/projects/cleck-cover.jpg" alt="Cleck!: call sheet app for film sets" />
+            </div>
+            <div class="card__body">
+              <h3 class="card__title">Cleck!: call sheet app for film sets</h3>
+              <span class="card__year">2026</span>
+            </div>
+          </a>
+
+          <a href="alerta-enchentes.html" class="card">
+            <div class="card__image">
+              <img src="assets/projects/alerta-cover.jpg" alt="Alerta Enchentes RS: flood monitoring app" />
+            </div>
+            <div class="card__body">
+              <h3 class="card__title">Alerta Enchentes RS: flood monitoring app</h3>
+              <span class="card__year">2024</span>
+            </div>
+          </a>
+
+          <a href="webaluno.html" class="card">
+            <div class="card__image">
+              <img src="assets/projects/webaluno-cover.jpg" alt="WebAluno PUCPR: student portal redesign" />
+            </div>
+            <div class="card__body">
+              <h3 class="card__title">WebAluno PUCPR: student portal redesign</h3>
+              <span class="card__year">2024</span>
+            </div>
+          </a>
+
+          <div class="card card--soon">
+            <span class="card__badge">Coming soon</span>
+            <div class="card__image">
+              <img src="assets/projects/hooky-cover.jpg" alt="Hooky: crochet organizer" />
+            </div>
+            <div class="card__body">
+              <h3 class="card__title">Hooky: crochet organizer</h3>
+              <span class="card__year">2026</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- CTA final -->
+      <section class="cta gallery-cta" aria-labelledby="cta-title">
+        <div class="cta__content">
+          <h2 id="cta-title" class="cta__title">
+            Let's work<br /><span>together.</span>
+          </h2>
+          <a href="contact.html" class="btn btn--primary">
+            Get in touch
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 18 18 6"/><path d="M8 6h10v10"/></svg>
+          </a>
+        </div>
+      </section>
+
+    </main>
+  </div>
+
+  <script src="i18n.js"></script>
+  <script src="home.js"></script>
+</body>
+</html>

@@ -1,0 +1,350 @@
+/* ==========================================================
+   Portfólio — Mirela Proença
+   Ajuste as cores e a fonte nas variáveis abaixo.
+   ========================================================== */
+
+:root {
+  /* Cores (valores aproximados do protótipo — confira no Figma) */
+  --red: #cf1f4a;
+  --red-soft: #fce8ec;       /* fundo do item ativo */
+  --pink-border: #f3c3ce;    /* bordas rosa claras */
+  --pink-text: #c2415f;      /* texto/ícones dos itens inativos */
+  --blue: #1f4fd1;
+  --gray: #ababab;           /* placeholder de imagem */
+  --text: #1c2340;          /* texto corrido */
+  --ink-soft: #565c78;      /* texto secundário */
+  --surface: #f6f6fa;       /* fundo neutro de apoio */
+  --line: #e4e4ec;
+  --bg: #fff;
+
+  /* Tipografia */
+  --font: "Bricolage Grotesque", system-ui, sans-serif;   /* títulos, menu, botões, stickers */
+  --font-body: -apple-system, BlinkMacSystemFont, "SF Pro Text", "SF Pro Display", system-ui, "Segoe UI", sans-serif;   /* corpo de texto (SF Pro) */
+  
+  /* Layout */
+  --sidebar-w: 22%;
+  --radius-lg: 40px;
+  --radius-md: 28px;
+  --radius-sm: 18px;
+
+  /* Escala de texto: use sempre estes tamanhos */
+  --fs-xs: 0.8125rem;   /* etiquetas */
+  --fs-sm: 0.9375rem;   /* legendas e apoio */
+  --fs-body: 1.125rem;  /* texto corrido */
+  --fs-h3: 1.25rem;     /* títulos de cards e etapas */
+  --fs-h2: clamp(1.75rem, 2.6vw, 2.25rem);   /* títulos de seção */
+  --lh-body: 1.6;
+  --section-gap: var(--space-6);
+
+  /* Grid de 8 pontos: todo espaçamento é múltiplo de 8.
+     O meio-passo (4 e 12) só entra em elementos pequenos, como tags. */
+  --space-half: 4px;
+  --space-1: 8px;
+  --space-1-5: 12px;
+  --space-2: 16px;
+  --space-3: 24px;
+  --space-4: 32px;
+  --space-5: 40px;
+  --space-6: 48px;
+  --space-7: 56px;
+  --space-8: 64px;
+  --space-9: 72px;
+  --space-10: 80px;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  font-family: var(--font-body);
+  color: var(--text);
+  background: var(--bg);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Bricolage Grotesque só em títulos e elementos de destaque; o resto é SF Pro */
+h1, h2, h3, h4,
+.nav__item,
+.sticker,
+.profile__name,
+.card__year { font-family: var(--font); }
+
+a { color: inherit; text-decoration: none; }
+
+a:focus-visible,
+button:focus-visible { outline: 3px solid var(--blue); outline-offset: 3px; }
+img { max-width: 100%; display: block; }
+
+svg {
+  width: 1.25em;
+  height: 1.25em;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.8;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  flex: none;
+}
+
+/* ---------- Layout geral ---------- */
+
+.layout {
+  display: grid;
+  grid-template-columns: minmax(240px, var(--sidebar-w)) 1fr;
+  min-height: 100vh;
+}
+
+/* ---------- Sidebar ---------- */
+
+.sidebar {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  padding: var(--space-5) var(--space-3);
+  border-right: 1px solid var(--line);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-5);
+}
+
+.profile {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+.profile__photo {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  object-fit: cover;
+  background: var(--red-soft); /* aparece se a foto não carregar */
+}
+
+.profile__info { display: flex; flex-direction: column; line-height: 1.25; }
+.profile__name { font-size: 1.125rem; font-weight: 600; }
+.profile__role { font-size: var(--fs-sm); font-weight: 400; color: var(--ink-soft); }
+
+.nav { display: flex; flex-direction: column; gap: var(--space-1); }
+
+.nav__item {
+  display: flex;
+  align-items: center;
+  gap: var(--space-1);
+  padding: 0 var(--space-2);
+  font-size: 1.0625rem;
+  font-weight: 500;
+  color: var(--ink-soft);
+  border-radius: 12px;
+  transition: background 0.2s, color 0.2s;
+  min-height: 48px;
+}
+
+.nav__item svg { width: 1.25rem; height: 1.25rem; }
+
+.nav__item:hover {
+  background: var(--surface);
+  color: var(--text);
+}
+
+.nav__item--active {
+  background: var(--red-soft);
+  color: var(--red);
+}
+
+/* ---------- Conteúdo principal ---------- */
+
+.main {
+  padding: var(--space-8) var(--space-8) var(--space-10);
+  max-width: 1200px;
+}
+
+/* ---------- Hero ---------- */
+
+.hero__title {
+  margin: 0;
+  font-size: clamp(2.75rem, 5.5vw, 4.5rem);
+  font-weight: 700;
+  line-height: 1.05;
+  color: var(--red);
+}
+
+.hero__subtitle {
+  margin: var(--space-1) 0 0;
+  min-height: 1.3em; /* o efeito de digitação não empurra a página */
+  font-size: clamp(1.5rem, 2.6vw, 2.25rem);
+  font-weight: 600;
+  color: var(--blue);
+}
+
+.hero__text {
+  margin: var(--space-3) 0 0;
+  max-width: 62ch;
+  font-size: var(--fs-body);
+  line-height: var(--lh-body);
+  color: var(--text);
+}
+
+.hero__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+  margin-top: var(--space-4);
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-1);
+  padding: 0 var(--space-3);
+  font-family: var(--font);
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: 14px;
+  border: 1.5px solid var(--red);
+  transition: transform 0.15s, background 0.2s, color 0.2s;
+  min-height: 48px;
+}
+
+.btn:hover { transform: translateY(-2px); }
+
+.btn--primary { background: var(--red); color: #fff; }
+.btn--primary:hover { background: #ad1a3e; }
+
+.btn--outline { background: transparent; color: var(--red); }
+.btn--outline:hover { background: var(--red-soft); }
+
+/* ---------- Recent works ---------- */
+
+.works {
+  margin-top: var(--section-gap);
+}
+
+.works__title {
+  margin: 0 0 var(--space-3);
+  font-size: var(--fs-h2);
+  font-weight: 600;
+  color: var(--blue);
+}
+
+.works__grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--space-3);
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 28px rgba(28, 35, 64, 0.12);
+}
+
+.card__image {
+  position: relative;
+  display: grid;
+  place-items: center;
+  aspect-ratio: 1.9 / 1;
+  background: var(--surface);
+}
+
+/* Enquanto o projeto não tem imagem, o card mostra uma capa com o nome.
+   Ao colocar a <img>, a capa some sozinha. */
+.card__image:not(:has(img)) {
+  background-image: radial-gradient(rgba(255, 255, 255, 0.18) 1.5px, transparent 1.6px);
+  background-size: 22px 22px;
+  font-family: var(--font);
+  font-size: clamp(1.75rem, 3vw, 2.5rem);
+  font-weight: 700;
+  text-align: center;
+}
+.card[href="cleck.html"] .card__image:not(:has(img)) { background-color: var(--blue); color: #fff; }
+.card[href="cleck.html"] .card__image:not(:has(img))::after { content: "Cleck!"; }
+.card[href="alerta-enchentes.html"] .card__image:not(:has(img)) { background-color: #1a2f8f; color: #fff; }
+.card[href="alerta-enchentes.html"] .card__image:not(:has(img))::after { content: "Alerta Enchentes RS"; padding: 0 var(--space-3); }
+.card[href="webaluno.html"] .card__image:not(:has(img)) { background-color: #f6c445; color: var(--text); }
+.card[href="webaluno.html"] .card__image:not(:has(img))::after { content: "WebAluno"; }
+.card--soon .card__image:not(:has(img)) { background-color: var(--red-soft); color: var(--red); background-image: none; }
+.card--soon .card__image:not(:has(img))::after { content: "Hooky"; }
+
+/* projeto ainda em andamento: não é link */
+.card--soon { position: relative; cursor: default; }
+.card--soon:hover { transform: none; box-shadow: none; }
+
+.card__badge {
+  position: absolute;
+  top: var(--space-2);
+  left: var(--space-2);
+  z-index: 1;
+  padding: var(--space-half) var(--space-1-5);
+  font-size: var(--fs-xs);
+  font-weight: 600;
+  color: var(--text);
+  background: #fff;
+  border-radius: 999px;
+  box-shadow: 0 2px 8px rgba(28, 35, 64, 0.12);
+}
+
+.card__image img { width: 100%; height: 100%; object-fit: cover; }
+
+.card__body { padding: var(--space-3); }
+
+.card__title {
+  margin: 0;
+  font-size: var(--fs-h3);
+  font-weight: 600;
+  line-height: 1.3;
+  color: var(--text);
+}
+
+.card__year {
+  display: block;
+  margin-top: var(--space-1);
+  font-size: var(--fs-sm);
+  font-weight: 500;
+  color: var(--ink-soft);
+}
+
+/* ---------- Responsivo ---------- */
+
+@media (max-width: 1000px) {
+  .main { padding: var(--space-8) var(--space-5) var(--space-10); }
+  .works__grid { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 800px) {
+  :root { --section-gap: var(--space-5); }
+
+  .layout { grid-template-columns: 1fr; align-content: start; }
+
+  .sidebar {
+    position: static;
+    height: auto;
+    padding: var(--space-3);
+    gap: var(--space-3);
+    border-right: 0;
+    border-bottom: 1px solid var(--line);
+  }
+
+  .nav {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: var(--space-1);
+  }
+
+  .profile { padding-right: calc(var(--space-1) * 13); } /* espaço para a chave de idioma */
+  .nav__item { padding: 0 var(--space-1); font-size: var(--fs-sm); gap: var(--space-1); min-height: 40px; }
+  .nav__item svg { width: 1.2rem; height: 1.2rem; }
+
+  .main { padding: var(--space-5) var(--space-3) var(--space-7); }
+}

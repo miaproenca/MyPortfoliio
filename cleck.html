@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Cleck! — Mirela Proença</title>
+  <meta name="description" content="Cleck!: a call sheet app for film sets. Case study by Mirela Proença." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,200..800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="about.css" />
+  <link rel="stylesheet" href="projects.css" />
+</head>
+<body>
+  <div class="layout">
+
+    <!-- ========== SIDEBAR ========== -->
+    <aside class="sidebar">
+      <a href="index.html" class="profile">
+        <img class="profile__photo" src="assets/mirela.jpg" alt="Foto de Mirela Proença" />
+        <div class="profile__info">
+          <strong class="profile__name">Mirela Proença</strong>
+          <span class="profile__role">Product designer</span>
+        </div>
+      </a>
+
+      <nav class="nav" aria-label="Navegação principal">
+        <a href="index.html" class="nav__item">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 11.5 12 4l9 7.5"/><path d="M5.5 10v10h13V10"/><path d="M10 20v-6h4v6"/></svg>
+          <span>Home</span>
+        </a>
+        <a href="about.html" class="nav__item">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="3.6"/><path d="M4.5 20c.8-4 3.7-6 7.5-6s6.7 2 7.5 6"/></svg>
+          <span>Resume</span>
+        </a>
+        <a href="projects.html" class="nav__item nav__item--active" aria-current="page">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 7.5V19h18V8.5H11L9 6H3z"/><path d="M3 10.5h18"/></svg>
+          <span>Projects</span>
+        </a>
+        <a href="contact.html" class="nav__item">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="1.5"/><path d="m3 6 9 7 9-7"/></svg>
+          <span>Contact</span>
+        </a>
+      </nav>
+    </aside>
+
+    <!-- ========== CONTEÚDO ========== -->
+    <main class="main">
+      <a href="projects.html" class="back">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M19 12H5"/><path d="m11 6-6 6 6 6"/></svg>
+        Back to gallery
+      </a>
+
+      <div class="case">
+
+        <!-- Cabeçalho -->
+        <header class="project-head">
+          <h1 class="hero__title">Cleck!</h1>
+          <h2 class="hero__subtitle">The call sheet in your pocket</h2>
+          <!-- EDITE: o projeto em uma ou duas frases -->
+          <p class="hero__text">
+            An iOS app that helps assistant directors organize shooting schedules and keep the whole film crew on the same page.
+          </p>
+
+          <!-- EDITE: ficha técnica -->
+          <dl class="meta">
+            <div class="meta__item"><dt class="meta__label">Year</dt><dd class="meta__value">2026</dd></div>
+            <div class="meta__item"><dt class="meta__label">Role</dt><dd class="meta__value">UI/UX Designer</dd></div>
+            <div class="meta__item"><dt class="meta__label">Tools</dt><dd class="meta__value">Figma, Notion, SwiftUI, Firebase, WeatherKit</dd></div>
+            <div class="meta__item"><dt class="meta__label">Format</dt><dd class="meta__value">Team project, iOS app</dd></div>
+          </dl>
+
+          <figure class="cover">
+            <img src="assets/projects/cleck-cover.jpg" alt="Cleck! project cover" />
+          </figure>
+        </header>
+
+        <!-- Visão geral -->
+        <section class="block" aria-labelledby="overview-title">
+          <h2 id="overview-title" class="block__title">Overview</h2>
+          <div class="prose">
+            <p>On a film set, assistant directors (ADs) connect the director, the cast and every department. One of their main jobs is creating the call sheet: the document that says what will be shot each day, in what order, and when the crew arrives, breaks and wraps.</p>
+            <p>Scenes are rarely shot in script order, so this schedule is constantly being organized and reorganized. Cleck! brings schedules, call sheets and team communication into one app. We built it as a team, using the Challenge Based Learning framework.</p>
+          </div>
+        </section>
+
+        <!-- Problema e objetivo -->
+        <section class="duo" aria-label="Problema e objetivo">
+          <article class="note note--filled">
+            <h2 class="note__title">The problem</h2>
+            <p>Without clear communication and organization processes, film crews lose alignment. That leads to repeated delays, piled-up tasks and wasted resources, which affect both the quality of the production and its completion.</p>
+          </article>
+          <article class="note">
+            <h2 class="note__title">The goal</h2>
+            <p>Help ADs coordinate production in one place, making the process faster, more visual and less dependent on last-minute improvisation.</p>
+          </article>
+        </section>
+
+        <!-- Processo -->
+        <section class="block" aria-labelledby="process-title">
+          <h2 id="process-title" class="block__title">Process</h2>
+
+          <ol class="timeline">
+            <li class="timeline__item">
+              <span class="timeline__star" aria-hidden="true"></span>
+              <span class="timeline__date">Step 01</span>
+              <strong class="timeline__role">Engage</strong>
+              <span class="timeline__place">We brainstormed a wide range of professions, chose cinema and first focused on screenwriters.</span>
+            </li>
+            <li class="timeline__item">
+              <span class="timeline__star" aria-hidden="true"></span>
+              <span class="timeline__date">Step 02</span>
+              <strong class="timeline__role">Investigate</strong>
+              <span class="timeline__place">A survey of film students and interviews with professionals showed that organizing and viewing call sheets was one of the biggest problems on set. It falls on ADs, so we changed our focus to them.</span>
+            </li>
+            <li class="timeline__item">
+              <span class="timeline__star" aria-hidden="true"></span>
+              <span class="timeline__date">Step 03</span>
+              <strong class="timeline__role">Define</strong>
+              <span class="timeline__place">We created a persona and two user journeys, one for a whole audiovisual project and one for the AD&rsquo;s tasks, then used MoSCoW to prioritize features and reduce scope.</span>
+            </li>
+            <li class="timeline__item">
+              <span class="timeline__star" aria-hidden="true"></span>
+              <span class="timeline__date">Step 04</span>
+              <strong class="timeline__role">Act</strong>
+              <span class="timeline__place">We moved from visual identity and wireframes to the final interface in Figma, tracked tasks on a Notion kanban and built the app with SwiftUI and Firebase.</span>
+            </li>
+          </ol>
+        </section>
+
+        <!-- Resultados e próximos passos -->
+        <section class="duo" aria-label="Resultados e próximos passos">
+          <article class="note note--filled">
+            <h2 class="note__title">The results</h2>
+            <p>We finished every must-have feature, even after drastically reducing the scope, and the call sheet turned out the way we wanted. Several people working in the field found the project useful and important.</p>
+          </article>
+          <article class="note">
+            <h2 class="note__title">What's next</h2>
+            <p>We plan to publish the app on the App Store and bring back features cut for scope: multiple projects, light mode and a checklist of what each shooting day needs.</p>
+          </article>
+        </section>
+
+        <!-- Fluxo de telas: aparece sozinho quando assets/projects/cleck-flow.png existir -->
+        <section class="block" aria-labelledby="flow-title">
+          <h2 id="flow-title" class="block__title">Screen flow</h2>
+          <div class="flow">
+            <a href="assets/projects/cleck-flow.png" target="_blank" rel="noopener noreferrer">
+              <img src="assets/projects/cleck-flow.png" alt="Cleck! screen flow" onerror="this.closest('section').hidden = true" />
+            </a>
+          </div>
+          <a class="flow__open" href="assets/projects/cleck-flow.png" target="_blank" rel="noopener noreferrer">
+            Open full size
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 18 18 6"/><path d="M8 6h10v10"/></svg>
+          </a>
+        </section>
+
+        <!-- Telas finais -->
+        <section class="block" aria-labelledby="screens-title">
+          <h2 id="screens-title" class="block__title">Final screens</h2>
+
+          <div class="screens">
+            <figure class="screen">
+              <div class="screen__img"><img src="assets/projects/cleck-1.png" alt="Welcome screen" loading="lazy" /></div>
+              <figcaption>Welcome screen</figcaption>
+            </figure>
+            <figure class="screen">
+              <div class="screen__img"><img src="assets/projects/cleck-2.png" alt="Onboarding screen" loading="lazy" /></div>
+              <figcaption>Onboarding</figcaption>
+            </figure>
+            <figure class="screen">
+              <div class="screen__img"><img src="assets/projects/cleck-3.png" alt="Login screen" loading="lazy" /></div>
+              <figcaption>Login</figcaption>
+            </figure>
+            <figure class="screen">
+              <div class="screen__img"><img src="assets/projects/cleck-4.png" alt="Choice between creating or joining a project" loading="lazy" /></div>
+              <figcaption>Create or join a project</figcaption>
+            </figure>
+            <figure class="screen">
+              <div class="screen__img"><img src="assets/projects/cleck-5.png" alt="Project home with the weekly schedule" loading="lazy" /></div>
+              <figcaption>Project overview</figcaption>
+            </figure>
+            <figure class="screen">
+              <div class="screen__img"><img src="assets/projects/cleck-6.png" alt="List of call sheets by shooting day" loading="lazy" /></div>
+              <figcaption>Call sheets</figcaption>
+            </figure>
+            <figure class="screen">
+              <div class="screen__img"><img src="assets/projects/cleck-7.png" alt="Form to add a scene" loading="lazy" /></div>
+              <figcaption>Add a scene</figcaption>
+            </figure>
+            <figure class="screen">
+              <div class="screen__img"><img src="assets/projects/cleck-8.png" alt="Profile screen" loading="lazy" /></div>
+              <figcaption>Profile</figcaption>
+            </figure>
+          </div>
+        </section>
+
+        <!-- Aprendizados -->
+        <section class="block" aria-labelledby="learned-title">
+          <h2 id="learned-title" class="block__title">What I learned</h2>
+
+          <div class="takeaways">
+            <article class="takeaway">
+              <span class="timeline__star" aria-hidden="true"></span>
+              <h3 class="takeaway__title">Components and color variables</h3>
+              <p>I got a much better understanding of how to work with components and color variables.</p>
+            </article>
+            <article class="takeaway">
+              <span class="timeline__star" aria-hidden="true"></span>
+              <h3 class="takeaway__title">Research can change the direction</h3>
+              <p>We started out designing for screenwriters. Listening to people in the field pointed us to a more relevant problem and a different user.</p>
+            </article>
+            <article class="takeaway">
+              <span class="timeline__star" aria-hidden="true"></span>
+              <h3 class="takeaway__title">Scope is a design decision</h3>
+              <p>Cutting features early is what let us finish the essentials. If the scope feels just right, it is probably still too big.</p>
+            </article>
+          </div>
+        </section>
+
+        <!-- Navegação entre projetos -->
+        <nav class="next" aria-label="Outros projetos">
+          <a href="projects.html" class="btn btn--outline">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M19 12H5"/><path d="m11 6-6 6 6 6"/></svg>
+            Back to gallery
+          </a>
+          <a href="alerta-enchentes.html" class="btn btn--primary">
+            Next: Alerta Enchentes RS
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 18 18 6"/><path d="M8 6h10v10"/></svg>
+          </a>
+        </nav>
+
+      </div>
+    </main>
+  </div>
+  <script src="i18n.js"></script>
+</body>
+</html>

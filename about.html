@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Resume — Mirela Proença</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,200..800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="about.css" />
+</head>
+<body>
+  <div class="layout">
+
+    <!-- ========== SIDEBAR (igual à home) ========== -->
+    <aside class="sidebar">
+      <a href="index.html" class="profile">
+        <img class="profile__photo" src="assets/mirela.jpg" alt="Foto de Mirela Proença" />
+        <div class="profile__info">
+          <strong class="profile__name">Mirela Proença</strong>
+          <span class="profile__role">Product designer</span>
+        </div>
+      </a>
+
+      <nav class="nav" aria-label="Navegação principal">
+        <a href="index.html" class="nav__item">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 11.5 12 4l9 7.5"/><path d="M5.5 10v10h13V10"/><path d="M10 20v-6h4v6"/></svg>
+          <span>Home</span>
+        </a>
+        <a href="about.html" class="nav__item nav__item--active" aria-current="page">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="3.6"/><path d="M4.5 20c.8-4 3.7-6 7.5-6s6.7 2 7.5 6"/></svg>
+          <span>Resume</span>
+        </a>
+        <a href="projects.html" class="nav__item">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 7.5V19h18V8.5H11L9 6H3z"/><path d="M3 10.5h18"/></svg>
+          <span>Projects</span>
+        </a>
+        <a href="contact.html" class="nav__item">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="1.5"/><path d="m3 6 9 7 9-7"/></svg>
+          <span>Contact</span>
+        </a>
+      </nav>
+    </aside>
+
+    <!-- ========== CONTEÚDO ========== -->
+    <main class="main about">
+
+      <header class="about__intro">
+        <h1 class="hero__title">Resume</h1>
+        <h2 class="hero__subtitle">Mirela Proença · UI/UX Designer</h2>
+        <!-- PDFs em assets/. A versão em português é escolhida pelo i18n.js. -->
+        <a href="assets/Mirela-Proenca-CV.pdf" data-href-pt="assets/Mirela-Proenca-Curriculo.pdf" class="btn btn--primary" download>
+          Download CV
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11"/><path d="m7 11 5 5 5-5"/><path d="M5 20h14"/></svg>
+        </a>
+      </header>
+
+      <!-- Education -->
+      <section class="block" aria-labelledby="edu-title">
+        <h2 id="edu-title" class="block__title">Education</h2>
+
+        <ol class="timeline">
+          <li class="timeline__item">
+            <span class="timeline__star" aria-hidden="true"></span>
+            <span class="timeline__date">2023 - 2026</span>
+            <strong class="timeline__role">Pontifical Catholic University of Paraná</strong>
+            <span class="timeline__place">Bachelor of Design</span>
+            <span class="timeline__place">Focus on UI/UX &amp; Product Design</span>
+          </li>
+
+          <li class="timeline__item">
+            <span class="timeline__star" aria-hidden="true"></span>
+            <span class="timeline__date">2024 - 2026</span>
+            <strong class="timeline__role">Apple Developer Academy</strong>
+            <span class="timeline__place">UX/UI Design &amp; iOS Development</span>
+            <ul class="tags">
+              <li>User Research</li>
+              <li>UI Design</li>
+              <li>Prototyping</li>
+              <li>SwiftUI</li>
+            </ul>
+          </li>
+        </ol>
+      </section>
+
+      <!-- Licenses & certifications -->
+      <section class="block" aria-labelledby="cert-title">
+        <h2 id="cert-title" class="block__title">Licenses &amp; certifications</h2>
+
+        <div class="cert-groups">
+          <article class="cert-group">
+            <h3 class="cert-group__title">Design &amp; UI</h3>
+            <ul class="certs">
+              <li class="cert">
+                <strong class="cert__name">Figma: creating and evolving interface components</strong>
+                <span class="cert__meta"><span>Alura</span> · <span>Oct 2025</span></span>
+              </li>
+              <li class="cert">
+                <strong class="cert__name">Figma: components</strong>
+                <span class="cert__meta"><span>Alura</span> · <span>Sep 2025</span></span>
+              </li>
+              <li class="cert">
+                <strong class="cert__name">Figma: getting to know the tool</strong>
+                <span class="cert__meta"><span>Alura</span> · <span>Sep 2024</span></span>
+              </li>
+              <li class="cert">
+                <strong class="cert__name">UI Design: creating the design of a prototype</strong>
+                <span class="cert__meta"><span>Alura</span> · <span>Sep 2024</span></span>
+              </li>
+              <li class="cert">
+                <strong class="cert__name">UI Design: diving into digital interfaces</strong>
+                <span class="cert__meta"><span>Alura</span> · <span>Aug 2024</span></span>
+              </li>
+            </ul>
+          </article>
+          <article class="cert-group">
+            <h3 class="cert-group__title">iOS development</h3>
+            <ul class="certs">
+              <li class="cert">
+                <strong class="cert__name">iOS Application Development: Advanced Concepts</strong>
+                <span class="cert__meta"><span>TIC em Trilhas</span> · <span>Jul 2026</span></span>
+              </li>
+              <li class="cert">
+                <strong class="cert__name">iOS Application Development: Intermediate Concepts</strong>
+                <span class="cert__meta"><span>TIC em Trilhas</span> · <span>Dec 2025</span></span>
+              </li>
+              <li class="cert">
+                <strong class="cert__name">iOS Application Development Fundamentals</strong>
+                <span class="cert__meta"><span>TIC em Trilhas</span> · <span>380 hours · Jul 2025</span></span>
+              </li>
+            </ul>
+          </article>
+          <article class="cert-group">
+            <h3 class="cert-group__title">Front-end</h3>
+            <ul class="certs">
+              <li class="cert">
+                <strong class="cert__name">HTML and CSS: header, footer and CSS variables</strong>
+                <span class="cert__meta"><span>Alura</span> · <span>Jun 2025</span></span>
+              </li>
+              <li class="cert">
+                <strong class="cert__name">HTML and CSS: classes, positioning and Flexbox</strong>
+                <span class="cert__meta"><span>Alura</span> · <span>May 2025</span></span>
+              </li>
+              <li class="cert">
+                <strong class="cert__name">HTML and CSS: development environments, file structure and tags</strong>
+                <span class="cert__meta"><span>Alura</span> · <span>May 2025</span></span>
+              </li>
+            </ul>
+          </article>
+          <article class="cert-group">
+            <h3 class="cert-group__title">Events &amp; workshops</h3>
+            <ul class="certs">
+              <li class="cert">
+                <strong class="cert__name">iFood Camp: connecting data, people and technology</strong>
+                <span class="cert__meta"><span>iFood</span> · <span>Mar 2026</span></span>
+              </li>
+              <li class="cert">
+                <strong class="cert__name">Ceramics workshop</strong>
+                <span class="cert__meta"><span>Even3</span> · <span>Oct 2025</span></span>
+              </li>
+              <li class="cert">
+                <strong class="cert__name">The Wave Tour - Figma in Brazil: Real Cases, Real Impact</strong>
+                <span class="cert__meta"><span>Friends of Figma, Curitiba</span> · <span>Aug 2025</span></span>
+              </li>
+              <li class="cert">
+                <strong class="cert__name">50 Years of Design - 3rd Event</strong>
+                <span class="cert__meta"><span>PUCPR</span> · <span>Aug 2025</span></span>
+              </li>
+              <li class="cert">
+                <strong class="cert__name">FURF Talk - 50 Years of Design</strong>
+                <span class="cert__meta"><span>PUCPR</span> · <span>May 2025</span></span>
+              </li>
+              <li class="cert">
+                <strong class="cert__name">50 Years of the Design Program</strong>
+                <span class="cert__meta"><span>PUCPR</span> · <span>Mar 2025</span></span>
+              </li>
+              <li class="cert">
+                <strong class="cert__name">Repentina CBL</strong>
+                <span class="cert__meta"><span>PUCPR</span> · <span>Oct 2024</span></span>
+              </li>
+            </ul>
+          </article>
+        </div>
+      </section>
+
+      <!-- Technical skills -->
+      <section class="block" aria-labelledby="skills-title">
+        <h2 id="skills-title" class="block__title">Technical skills</h2>
+        <ul class="pills pills--accent">
+          <li>UI design</li>
+          <li>UX research</li>
+          <li>Prototyping</li>
+          <li>Design systems</li>
+          <li>Wireframing</li>
+          <li>Usability testing</li>
+          <li>Branding</li>
+          <li>Illustration</li>
+        </ul>
+      </section>
+
+      <!-- Software + personal skills -->
+      <div class="about__grid about__grid--even">
+
+        <section class="block" aria-labelledby="soft-title">
+          <h2 id="soft-title" class="block__title">Software</h2>
+          <ul class="logos" aria-label="Software">
+            <li><img src="assets/Figma-logo.png" alt="Figma" /></li>
+            <li><img src="assets/Photoshop-logo.png" alt="Photoshop" /></li>
+            <li><img src="assets/Illustrator-logo.png" alt="Illustrator" /></li>
+            <li><img src="assets/Indesign-logo.png" alt="InDesign" /></li>
+            <li><img src="assets/After-logo.png" alt="After Effects" /></li>
+            <li><img src="assets/Notion-logo.png" alt="Notion" /></li>
+            <li><img src="assets/Trello-logo.png" alt="Trello" /></li>
+            <li><img src="assets/Vscode-logo.png" alt="VS Code" /></li>
+          </ul>
+        </section>
+
+        <section class="block" aria-labelledby="personal-title">
+          <h2 id="personal-title" class="block__title">Personal skills</h2>
+          <ul class="pills">
+            <li>Communication</li>
+            <li>Empathy</li>
+            <li>Collaboration</li>
+            <li>Critical thinking</li>
+            <li>Attention to detail</li>
+            <li>Time management</li>
+            <li>Willingness to learn</li>
+          </ul>
+        </section>
+      </div>
+
+      <!-- CTA final -->
+      <section class="cta" aria-labelledby="cta-title">
+        <div class="cta__art" aria-hidden="true">
+          <!-- Coloque aqui uma ilustração sua: <img src="assets/cta.svg" alt="" /> -->
+          <span>Your illustration here</span>
+        </div>
+
+        <div class="cta__content">
+          <h2 id="cta-title" class="cta__title">
+            Let's work<br /><span>together.</span>
+          </h2>
+          <a href="contact.html" class="btn btn--primary">
+            Get in touch
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 18 18 6"/><path d="M8 6h10v10"/></svg>
+          </a>
+        </div>
+      </section>
+
+    </main>
+  </div>
+  <script src="i18n.js"></script>
+</body>
+</html>

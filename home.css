@@ -1,0 +1,171 @@
+/* ==========================================================
+   Home — recursos extras (usa variáveis do styles.css
+   e os stickers do about.css)
+   ========================================================== */
+
+/* ---------- Hero: cargo que alterna ---------- */
+
+.hero__role::after {
+  content: "";
+  display: inline-block;
+  width: 3px;
+  height: 0.9em;
+  margin-left: var(--space-1);
+  background: var(--blue);
+  vertical-align: -0.1em;
+  animation: blink 1s steps(1) infinite;
+}
+
+@keyframes blink { 50% { opacity: 0; } }
+
+/* ---------- A little about me ---------- */
+
+.me { margin-top: var(--section-gap); }
+
+.cta { margin-top: var(--section-gap); }
+
+.me__grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--space-3);
+}
+
+.me-card {
+  padding: var(--space-4);
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-md);
+}
+
+.me-card--now { background: var(--red-soft); border-color: transparent; }
+
+.me-card__title {
+  margin: 0 0 var(--space-2);
+  font-size: var(--fs-h3);
+  font-weight: 600;
+  color: var(--blue);
+}
+
+/* "Right now" */
+.now {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  font-size: 1rem;
+  line-height: 1.4;
+  color: var(--text);
+}
+
+.now li { display: flex; flex-wrap: wrap; align-items: center; gap: var(--space-1); }
+
+.now__label {
+  padding: var(--space-half) var(--space-1-5);
+  font-size: var(--fs-xs);
+  font-weight: 600;
+  color: var(--red);
+  background: #fff;
+  border-radius: 999px;
+}
+
+/* "Things I love" — stickers menores */
+.stickers--small { gap: var(--space-2); justify-content: flex-start; }
+
+.stickers--small .sticker {
+  padding: var(--space-1) var(--space-2);
+  font-size: 0.85rem;
+  border-width: 2.5px;
+  box-shadow: 0 0 0 4px var(--ring);
+}
+
+/* ---------- Cartas que viram ---------- */
+
+.flips {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: var(--space-3);
+  margin-top: var(--space-3);
+}
+
+.flip {
+  appearance: none;
+  padding: 0;
+  border: 0;
+  background: none;
+  font: inherit;
+  color: inherit;
+  text-align: center;
+  cursor: pointer;
+  perspective: 900px;
+  aspect-ratio: 4 / 3;
+}
+
+.flip:focus-visible { outline: 3px solid var(--red); outline-offset: 4px; border-radius: var(--radius-md); }
+
+.flip__inner {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  transition: transform 0.6s cubic-bezier(.3, 1.3, .5, 1);
+}
+
+.flip[aria-pressed="true"] .flip__inner { transform: rotateY(180deg); }
+
+.flip__face {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-1);
+  padding: var(--space-3);
+  font-family: var(--font);
+  font-size: 1.35rem;
+  font-weight: 700;
+  line-height: 1.15;
+  color: #fff;
+  border-radius: var(--radius-md);
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
+
+.flip__face small {
+  font-family: var(--font-body);
+  font-size: 0.8rem;
+  font-weight: 500;
+  opacity: 0.85;
+}
+
+.flip__front { background: var(--blue); }
+.flip__back  { background: var(--red); transform: rotateY(180deg); }
+
+.flip:nth-child(2) .flip__front { background: var(--pink-text); }
+.flip:nth-child(2) .flip__back  { background: var(--blue); }
+
+.flip:nth-child(3) .flip__front { background: var(--yellow); color: var(--text); }
+.flip:nth-child(3) .flip__back  { background: var(--navy); }
+
+/* ---------- Movimento reduzido ---------- */
+
+@media (prefers-reduced-motion: reduce) {
+  .hero__role::after { animation: none; }
+  .flip__inner { transition: none; }
+}
+
+/* ---------- Responsivo ---------- */
+
+@media (max-width: 1000px) {
+  .me__grid { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 700px) {
+  .flips { grid-template-columns: 1fr; }
+  .flip { aspect-ratio: auto; height: 150px; }
+  .me-card { padding: var(--space-3); }
+  .hero__subtitle { min-height: 2.5em; }   /* reserva 2 linhas: frases longas não empurram o resto da página */
+}

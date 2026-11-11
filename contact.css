@@ -1,0 +1,131 @@
+/* ==========================================================
+   Contact — usa as variáveis do styles.css
+   ========================================================== */
+
+.contact { display: flex; flex-direction: column; gap: var(--space-6); }
+
+.contact__head .hero__text { margin-top: var(--space-3); }
+
+/* ---------- Cards de link (e-mail, LinkedIn) ---------- */
+
+.links {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--space-3);
+}
+
+.link-card {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: var(--space-3);
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-md);
+  transition: transform 0.2s, background 0.2s, border-color 0.2s;
+}
+
+a.link-card:hover {
+  transform: translateY(-3px);
+  background: var(--surface);
+  border-color: var(--line);
+}
+
+.link-card__icon {
+  flex: none;
+  display: grid;
+  place-items: center;
+  width: 48px;
+  height: 48px;
+  color: var(--red);
+  background: var(--red-soft);
+  border-radius: 50%;
+}
+
+.link-card__icon svg { width: 24px; height: 24px; }
+
+.link-card__text { min-width: 0; display: flex; flex-direction: column; gap: var(--space-half); }
+
+.link-card__label {
+  font-size: var(--fs-xs);
+  font-weight: 500;
+  color: var(--ink-soft);
+}
+
+.link-card__value {
+  font-family: var(--font);
+  font-size: 1.0625rem;
+  font-weight: 600;
+  color: var(--text);
+  overflow-wrap: anywhere;
+}
+
+.link-card__go { margin-left: auto; flex: none; color: var(--red); }
+
+/* linha do e-mail: o card é um <div> com link + botão de copiar */
+.link-card--email { flex-wrap: wrap; }
+
+.link-card--email .link-card__main {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  flex: 1 1 280px;
+  min-width: 0;
+  color: inherit;
+}
+
+.copy {
+  appearance: none;
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-1);
+  padding: 0 var(--space-2);
+  font-family: var(--font);
+  font-size: var(--fs-sm);
+  font-weight: 600;
+  color: var(--red);
+  background: none;
+  border: 1.5px solid var(--red);
+  border-radius: 14px;
+  cursor: pointer;
+  transition: background 0.2s;
+  min-height: 40px;
+}
+
+.copy:hover { background: var(--red-soft); }
+.copy:focus-visible { outline: 3px solid var(--red); outline-offset: 3px; }
+.copy svg { width: 1.1em; height: 1.1em; }
+
+/* aviso temporário: só aparece enquanto os dados são de exemplo */
+.placeholder-note {
+  margin: 0;
+  padding: var(--space-2) var(--space-3);
+  font-size: 0.95rem;
+  line-height: 1.35;
+  color: var(--text);
+  background: #fcefc2;
+  border: 2px dashed var(--yellow);
+  border-radius: var(--radius-sm);
+}
+
+.placeholder-note[hidden] { display: none; }
+
+/* ---------- Responsivo ---------- */
+
+@media (max-width: 1100px) {
+  .links { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 600px) {
+  .link-card { padding: var(--space-3); gap: var(--space-2); }
+  .link-card--email .link-card__main { gap: var(--space-2); }
+  .link-card__icon { width: 48px; height: 48px; }
+  .link-card--email .link-card__main { flex-basis: 100%; }
+}
+
+/* telas estreitas: sem o ícone, o e-mail cabe em uma linha */
+@media (max-width: 400px) {
+  .link-card__icon { display: none; }
+  .link-card__value { font-size: var(--fs-sm); }
+}
+
