@@ -104,6 +104,7 @@ const PT = {
   "Oct 2025": "out. de 2025",
   "Sep 2024": "set. de 2024",
   "Sep 2025": "set. de 2025",
+  "Sep 2026": "set. de 2026",
   "Technical skills": "Habilidades técnicas",
   "UX research": "Pesquisa de UX",
   "Wireframing": "Wireframes",
